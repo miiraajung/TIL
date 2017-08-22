@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* jQuery 사용 */
+    .colorbox{
+      background: aqua;
+      height: 100px;
+      width: 100px;
+      margin:20px;
+      display:none;
+    }
+    /* css 사용 */
+    .color_box{
+      background: aquamarine;
+      height: 100px;
+      width: 100px;
+      opacity: 0;
+      transition:all 2s;         
+    }
+    .color_boxsee{
+      background: aquamarine;
+      height: 100px;
+      width: 100px;
+      opacity: 1;
+      transition:all 2s;     
+      
+    }
+    
+
+  </style>
+</head>
+<body>
+  <h1>fade-in, fade-out effect width css & js</h1>
+  <div class="colorbox"></div>
+  <button id="btnin">fade in</button>
+  <button id="btnout">fade out</button>
+  <div>
+    <h1>fade-in, fade-out effect width css & js <span>dfjksjdfd</span></h1>
+    <div id="colorbox2" class="color_box"></div>
+    <button id="btnin2">fade in</button>
+    <button id="btnout2">fade out</button>
+  </div>  
+  
+  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#btnin').click(function() {    
+      $('.colorbox').fadeIn(2000);    
+    });
+    $('#btnout').click(function() {    
+      $('.colorbox').fadeOut(2000);    
+    });
+  });
+
+  
+</script>
+<script>
+    (function() {   
+      var btnin2 = document.getElementById('btnin2');
+      var colorbox2 = document.getElementById('colorbox2'); 
+      var btnout2 = document.getElementById('btnout2');    
+
+      btnin2.addEventListener('click', function() {              
+      colorbox2.setAttribute('class', 'color_boxsee');       
+      });
+      btnout2.addEventListener('click', function() {         
+      colorbox2.setAttribute('class', 'color_box');       
+      });
+     
+    }());
+</script>   
+</html>
